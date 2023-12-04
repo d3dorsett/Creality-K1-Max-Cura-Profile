@@ -5,3 +5,6 @@ These are my personal settings for the Creality K1 Max with a 0.6 nozzle, rooted
 
 Many of the features from Guilouz installer are used in my configuration files for fluidd, they are not needed for the Cura profile
 https://github.com/Guilouz/Creality-K1-and-K1-Max
+
+Gcode Viewer is also an excellent add-on for fluidd. Use it to stop sections that have failed.
+https://docs.fluidd.xyz/features/gcode-viewer
