@@ -6,7 +6,7 @@ My profiles for the Creality K1 Max using Ultimaker Cura 5.6.0
   - Personal 0.2 @ 600mm/s with combination of all 3 profiles to suite my personal preference
 
 
-My personal Creality K1 Max with a 0.6 nozzle, rooted and running fluidd (using Guilouz Installion Helper Script).
+My personal printer is a Creality K1 Max with a 0.6 nozzle, rooted and running fluidd (using Guilouz Installion Helper Script).
 https://github.com/Guilouz/Creality-K1-and-K1-Max
 
 
