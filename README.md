@@ -8,3 +8,10 @@ https://github.com/Guilouz/Creality-K1-and-K1-Max
 
 Gcode Viewer is also an excellent add-on for fluidd. Use it to stop sections that have failed.
 https://docs.fluidd.xyz/features/gcode-viewer
+
+**NOTE:** To use _KAMP_ or _Gcode Viewer_, Cura 5.6.0 has a bug. The follow steps need to be added as a post process.
+
+Cura -> Menu -> Extensions -> Post Processing -> Modify GCode
+Then Add a Script -> Search and Replace
+Search is NOMESH
+Replace is NONMESH
