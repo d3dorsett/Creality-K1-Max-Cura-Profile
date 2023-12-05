@@ -14,7 +14,7 @@ Gcode Viewer is also an excellent add-on for fluidd. Use it to stop sections tha
 https://docs.fluidd.xyz/features/gcode-viewer
 
 
-**NOTE:** A bug in Cura 5.3 has been fixed in 5.6.0 making the use of KAMP and Gcode Viewe_ useable if you add the follow macros to gcode_macro.cfg file:
+**NOTE:** A bug in Cura 5.3 has been fixed in 5.6.0 making the use of KAMP and Gcode Viewer useable if you add the follow macros to gcode_macro.cfg file:
 
 [gcode_macro DEFINE_OBJECT]
 gcode:
