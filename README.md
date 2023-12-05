@@ -15,3 +15,24 @@ Cura -> Menu -> Extensions -> Post Processing -> Modify GCode
 Then Add a Script -> Search and Replace
 Search is NOMESH
 Replace is NONMESH
+
+Also add this to macros...
+https://www.teamfdm.com/forums/topic/503-region-exclude-for-mainsailklipper/?do=findComment&comment=2461
+## exclude object macros
+[gcode_macro DEFINE_OBJECT]
+gcode: EXCLUDE_OBJECT_DEFINE {rawparams}
+
+[gcode_macro START_CURRENT_OBJECT]
+gcode: EXCLUDE_OBJECT_START NAME={params.NAME}
+
+[gcode_macro END_CURRENT_OBJECT]
+gcode: EXCLUDE_OBJECT_END {% if params.NAME %}NAME={params.NAME}{% endif %}
+
+[gcode_macro LIST_OBJECTS]
+gcode: EXCLUDE_OBJECT_DEFINE
+
+[gcode_macro LIST_EXCLUDED_OBJECTS]
+gcode: EXCLUDE_OBJECT
+
+[gcode_macro REMOVE_ALL_EXCLUDED]
+gcode: EXCLUDE_OBJECT RESET=1
