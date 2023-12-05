@@ -9,18 +9,8 @@ https://github.com/Guilouz/Creality-K1-and-K1-Max
 Gcode Viewer is also an excellent add-on for fluidd. Use it to stop sections that have failed.
 https://docs.fluidd.xyz/features/gcode-viewer
 
+**NOTE:** A bug in Cura 5.3 has been fixed in 5.6.0 making the use of _KAMP_ and _Gcode Viewer_ useable if you add the follow macros to gcode_macro.cfg file:
 
-
-**NOTE:** To use _KAMP_ or _Gcode Viewer_, Cura 5.6.0 has a bug. The follow steps need to be added as a post process.
-https://github.com/Ultimaker/Cura/issues/14679
-
-Cura -> Menu -> Extensions -> Post Processing -> Modify GCode
-Then Add a Script -> Search and Replace
-Search is NOMESH
-Replace is NONMESH
-
-Also add this to macros...
-https://www.teamfdm.com/forums/topic/503-region-exclude-for-mainsailklipper/?do=findComment&comment=2461
 ## exclude object macros
 [gcode_macro DEFINE_OBJECT]
 gcode: EXCLUDE_OBJECT_DEFINE {rawparams}
