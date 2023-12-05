@@ -1,9 +1,9 @@
 # Creality-K1-Max-Cura-Profile
 My profiles for the Creality K1 Max using Ultimaker Cura 5.6.0
-  -Fine 0.12mm @ 300mm/s 12k acceleration
-  -Normal 0.2mm @ 600mm/s 12k acceleration
-  -Fast 0.25 @ 600mm/s 20k acceleration (Benchy Speed Test)
-  -Personal 0.2 @ 600mm/s with combination of all 3 profiles to suite my personal preference
+  - Fine 0.12mm @ 300mm/s 12k acceleration
+  - Normal 0.2mm @ 600mm/s 12k acceleration
+  - Fast 0.25 @ 600mm/s 20k acceleration (Benchy Speed Test)
+  - Personal 0.2 @ 600mm/s with combination of all 3 profiles to suite my personal preference
 
 
 My personal Creality K1 Max with a 0.6 nozzle, rooted and running fluidd (using Guilouz Installion Helper Script).
