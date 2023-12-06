@@ -39,3 +39,28 @@ gcode:
 [gcode_macro REMOVE_ALL_EXCLUDED]
 gcode:
   EXCLUDE_OBJECT RESET=1
+
+**FAN CONTROL:**
+The K1 has a side fan and a rear fan. Cura can only control one and by default it is the rear fan. In order, to switch this open the printer.cfg and switch the pin for Fan1 with Fan2
+
+[output_pin fan1]
+#Switch for Fan2
+_#pin: PC0_
+pin: **PB1**
+pwm: True
+cycle_time: 0.0100
+hardware_pwm: false
+value: 0.00
+scale: 255
+shutdown_value: 0.0
+
+[output_pin fan2]
+#Switch for Fan1
+_#pin: PB1_
+pin: **PC0**
+pwm: True
+cycle_time: 0.0100
+hardware_pwm: false
+value: 0.00
+scale: 255
+shutdown_value: 0.0
