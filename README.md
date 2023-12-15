@@ -64,3 +64,17 @@ hardware_pwm: false
 value: 0.00
 scale: 255
 shutdown_value: 0.0
+
+**504 Gateway Timeout error on large prints:**
+504 Gateway Timeout error using Nginx as Proxy
+For Nginx as Proxy for Apache web server, this is what you have to try to fix the 504 Gateway Timeout error:
+
+Add these variables to  /usr/data/nginx/nginx/**nginx.conf** file:
+
+  proxy_connect_timeout       600;
+  proxy_send_timeout          600;
+  proxy_read_timeout          600;
+  send_timeout                600;
+Then restart nginx:
+
+service nginx reload
