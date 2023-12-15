@@ -72,10 +72,10 @@ For Nginx as Proxy for Apache web server, this is what you have to try to fix th
 
 Add these variables to  /usr/data/nginx/nginx/**nginx.conf** file:
 
-  proxy_connect_timeout       600;
-  proxy_send_timeout          600;
-  proxy_read_timeout          600;
-  send_timeout                600;
+  proxy_connect_timeout       1600;
+  proxy_send_timeout          1600;
+  proxy_read_timeout          1600;
+  send_timeout                1600;
 Then restart nginx:
 
 service nginx reload
