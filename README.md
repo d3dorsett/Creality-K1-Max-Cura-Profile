@@ -15,34 +15,30 @@ https://docs.fluidd.xyz/features/gcode-viewer
 
 
 **NOTE:** A bug in Cura 5.3 has been fixed in 5.6.0 making the use of KAMP and Gcode Viewer useable if you add the follow macros to gcode_macro.cfg file:
-
+```ruby
 [gcode_macro DEFINE_OBJECT]
 gcode:
   EXCLUDE_OBJECT_DEFINE {rawparams}
-
 [gcode_macro START_CURRENT_OBJECT]
 gcode:
   EXCLUDE_OBJECT_START NAME={params.NAME}
-
 [gcode_macro END_CURRENT_OBJECT]
 gcode:
   EXCLUDE_OBJECT_END {% if params.NAME %}NAME={params.NAME}{% endif %}
-
 [gcode_macro LIST_OBJECTS]
 gcode:
   EXCLUDE_OBJECT_DEFINE
-
 [gcode_macro LIST_EXCLUDED_OBJECTS]
 gcode:
   EXCLUDE_OBJECT
-
 [gcode_macro REMOVE_ALL_EXCLUDED]
 gcode:
   EXCLUDE_OBJECT RESET=1
-
+```
 **FAN CONTROL:**
 The K1 has a side fan and a rear fan. Cura can only control one and by default it is the rear fan. In order, to switch this open the printer.cfg and switch the pin for Fan1 with Fan2
 
+```ruby
 [output_pin fan1]
 #Switch for Fan2
 _#pin: PC0_
@@ -64,6 +60,7 @@ hardware_pwm: false
 value: 0.00
 scale: 255
 shutdown_value: 0.0
+```
 
 **504 Gateway Timeout error on large prints:**
 504 Gateway Timeout error using Nginx as Proxy
