@@ -10,7 +10,7 @@ My personal printer is a Creality K1 Max with a 0.6 nozzle, rooted and running f
 https://github.com/Guilouz/Creality-K1-and-K1-Max
 
 
-Gcode Viewer is also an excellent add-on for fluidd. Use it to stop sections that have failed.
+**Gcode Viewer** is also an excellent add-on for fluidd. Use it to stop sections that have failed.
 https://docs.fluidd.xyz/features/gcode-viewer
 
 
@@ -35,13 +35,13 @@ gcode:
 gcode:
   EXCLUDE_OBJECT RESET=1
 ```
-**FAN CONTROL:**
+**Fan Control:**
 The K1 has a side fan and a rear fan. Cura can only control one and by default it is the rear fan. In order, to switch this open the printer.cfg and switch the pin for Fan1 with Fan2
 
 ```ruby
 [output_pin fan1]
 #Switch for Fan2
-_#pin: PC0_
+#pin: PC0
 pin: **PB1**
 pwm: True
 cycle_time: 0.0100
@@ -52,7 +52,7 @@ shutdown_value: 0.0
 
 [output_pin fan2]
 #Switch for Fan1
-_#pin: PB1_
+#pin: PB1
 pin: **PC0**
 pwm: True
 cycle_time: 0.0100
@@ -62,17 +62,45 @@ scale: 255
 shutdown_value: 0.0
 ```
 
-**504 Gateway Timeout error on large prints:**
-504 Gateway Timeout error using Nginx as Proxy
+**504 Gateway Timeout Eeror in Slicer on Large prints:**
 
-For Nginx as Proxy for Apache web server, this is what you have to try to fix the 504 Gateway Timeout error:
+The 504 Gateway Timeout Error is an issue using Nginx as Proxy.
 
-Add these variables to  /usr/data/nginx/nginx/**nginx.conf** file:
+To fix this, ssh into the OS.
 
+Navigate to /usr/data/nginx/nginx
+
+Edit **nginx.conf** file:
+
+Find the following section...
+```rubt
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    #log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+    #                  '$status $body_bytes_sent "$http_referer" '
+    #                  '"$http_user_agent" "$http_x_forwarded_for"';
+
+    #access_log  logs/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  0;
+```
+
+Change and add the following...
+```ruby
+  #keepalive_timeout  0;
+  keepalive_timeout           65;
   proxy_connect_timeout       1600;
   proxy_send_timeout          1600;
   proxy_read_timeout          1600;
   send_timeout                1600;
-Then restart nginx:
+```
 
+Then restart nginx:
+```ruby
 service nginx reload
+```
