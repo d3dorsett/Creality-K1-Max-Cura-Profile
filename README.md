@@ -35,6 +35,24 @@ gcode:
 gcode:
   EXCLUDE_OBJECT RESET=1
 ```
+**KAMP purge is not using firmware retraction**
+KAMP purge is not using firmware retraction, it is recommended to configure it. Add this to the KAMP_Settings.cfg
+
+```ruby
+[firmware_retraction]
+retract_length: 0.4
+# The length of filament (in mm) to retract when G10 is activated,
+# and to unretract when G11 is activated (but see
+# unretract_extra_length below). The default is 0 mm.
+retract_speed: 40
+# The speed of retraction, in mm/s. The default is 20 mm/s.
+unretract_extra_length: 6.5
+# The length (in mm) of *additional* filament to add when
+# unretracting.
+unretract_speed: 25
+# The speed of unretraction, in mm/s. The default is 10 mm/s.
+```
+
 **Fan Control:**
 The K1 has a side fan and a rear fan. Cura can only control one and by default it is the rear fan. In order, to switch this open the printer.cfg and switch the pin for Fan1 with Fan2
 
