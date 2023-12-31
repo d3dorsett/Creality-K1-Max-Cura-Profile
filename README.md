@@ -91,6 +91,7 @@ Navigate to /usr/data/nginx/nginx
 Edit **nginx.conf** file:
 
 Find the following section...
+
 ```rubt
 http {
     include       mime.types;
